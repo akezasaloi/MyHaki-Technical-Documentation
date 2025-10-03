@@ -11,6 +11,31 @@
   --md-font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
 }
 
+
+#logo_light_mode {
+  display: block;
+}
+
+#logo_dark_mode {
+  display: none;
+}
+
+[data-md-color-scheme="default"] #logo_light_mode {
+  display: block;
+}
+
+[data-md-color-scheme="default"] #logo_dark_mode {
+  display: none;
+}
+
+[data-md-color-scheme="slate"] #logo_light_mode {
+  display: none;
+}
+
+[data-md-color-scheme="slate"] #logo_dark_mode {
+  display: block;
+}
+
 body, .md-typeset {
   font-family: var(--md-font-family) !important;
 }
@@ -309,27 +334,4 @@ a.md-button:hover {
 
 
 
-#logo_light_mode {
-  display: block;
-}
-
-#logo_dark_mode {
-  display: none;
-}
-
-[data-md-color-scheme="default"] #logo_light_mode {
-  display: block;
-}
-
-[data-md-color-scheme="default"] #logo_dark_mode {
-  display: none;
-}
-
-[data-md-color-scheme="slate"] #logo_light_mode {
-  display: none;
-}
-
-[data-md-color-scheme="slate"] #logo_dark_mode {
-  display: block;
-}
 
