@@ -317,6 +317,14 @@ a.md-button:hover {
   display: none;
 }
 
+[data-md-color-scheme="default"] #logo_light_mode {
+  display: block;
+}
+
+[data-md-color-scheme="default"] #logo_dark_mode {
+  display: none;
+}
+
 [data-md-color-scheme="slate"] #logo_light_mode {
   display: none;
 }
@@ -324,3 +332,4 @@ a.md-button:hover {
 [data-md-color-scheme="slate"] #logo_dark_mode {
   display: block;
 }
+
