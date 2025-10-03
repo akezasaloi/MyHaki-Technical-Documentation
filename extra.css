@@ -245,7 +245,6 @@ a.md-button:hover {
 }
 
 
-/* 1. Fix ALL headings and red text in dark mode */
 [data-md-color-scheme="slate"] h1,
 [data-md-color-scheme="slate"] h2,
 [data-md-color-scheme="slate"] h4,
@@ -259,12 +258,13 @@ a.md-button:hover {
 [data-md-color-scheme="slate"] .md-typeset .api-dark,
 [data-md-color-scheme="slate"] .md-typeset .api-title,
 [data-md-color-scheme="slate"] .md-typeset .api-header {
-  color: #F5BFA7 !important; /* Light orange/red for visibility */
+  color: #F5BFA7 !important;
+  
 }
 
 
 [data-md-color-scheme="slate"] .md-typeset h3{
-  color: #621616 !important; /* Light orange/red for visibility */
+  color: #621616 !important;
 }
 
 [data-md-color-scheme="slate"] span{
@@ -272,43 +272,37 @@ a.md-button:hover {
 }
 
 
-/* 2. Fix code blocks and API blocks with red backgrounds in dark mode */
 [data-md-color-scheme="slate"] pre,
 [data-md-color-scheme="slate"] code,
 [data-md-color-scheme="slate"] .md-typeset pre,
 [data-md-color-scheme="slate"] .md-typeset code,
 [data-md-color-scheme="slate"] .api-block,
 [data-md-color-scheme="slate"] .api-dark {
-  background: #621616 !important; /* Lighter brown for code blocks */
+  background: #621616 !important; 
   color: #fff !important;
   border-radius: 8px;
 }
 
-/* 3. Fix API headings specifically that use red color */
 [data-md-color-scheme="slate"] .md-typeset .api-title,
 [data-md-color-scheme="slate"] .md-typeset .api-header {
   color: #F5BFA7 !important;
 }
 
-/* 4. General override for any element with color: #621616 or similar in dark mode */
 [data-md-color-scheme="slate"] [style*="color: #621616"],
 [data-md-color-scheme="slate"] [style*="color:#621616"] {
   color: #F5BFA7 !important;
 }
 
-/* 5. General override for any element with color: #621616 or similar in dark mode */
 [data-md-color-scheme="slate"] [style*="color: #683929"],
 [data-md-color-scheme="slate"] [style*="color:#683929"] {
   color: #F5BFA7 !important;
 }
 
-/* 5. General override for any element with color: #621616 or similar in dark mode */
 [data-md-color-scheme="slate"] [style*="color: #232f3e"],
 [data-md-color-scheme="slate"] [style*="color:#232f3e"] {
   color: #F5BFA7 !important;
 }
 
-/* 6. Sidebar active link fix for nested elements */
 [data-md-color-scheme="slate"] .md-nav__link--active {
   color: #fff !important;
   border-left: 3px solid #fff !important;
