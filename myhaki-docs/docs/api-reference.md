@@ -18,7 +18,7 @@ Branding is key for all third-party integrations and admin dashboards. Please us
 - **Logo & Marks:**  
   ![Logo Mark Example 1](images/myhaki-logo.png)  
 
-   ![Logo Mark Example 2](images/icon-logo.png)  
+  ![Logo Mark Example 2](images/icon-logo.png)  
 
 - **Color Palette:**  
   - Deep Red: `#621616`

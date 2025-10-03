@@ -6,7 +6,7 @@
 - Always use the official MyHaki logo (`images/myhaki-logo.png`) with proper clear space and sizing.
 - Do not distort, recolor, or overlay the logo on busy backgrounds.
 
-<img src="images/myhaki-logo.png" alt="MyHaki Logo" style="width:180px; border-radius:18px; box-shadow:0 8px 38px #A8735233;">
+![Product Logo](images/myhaki-logo.png)
 
 ---
 
