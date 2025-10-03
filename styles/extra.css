@@ -90,7 +90,6 @@ pre, code, .api-block, .api-dark {
   max-width: 800px;
   margin: 2em auto;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(98, 22, 22, 0.1);
 }
 
 .carousel-slide {
@@ -310,3 +309,18 @@ a.md-button:hover {
 
 
 
+#logo_light_mode {
+  display: block;
+}
+
+#logo_dark_mode {
+  display: none;
+}
+
+[data-md-color-scheme="slate"] #logo_light_mode {
+  display: none;
+}
+
+[data-md-color-scheme="slate"] #logo_dark_mode {
+  display: block;
+}
