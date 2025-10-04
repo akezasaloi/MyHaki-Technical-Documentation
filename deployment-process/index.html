@@ -671,7 +671,7 @@
 
 
 <h1 id="deployment-process">Deployment Process</h1>
-<h2 id="frontend-deployment-lsk-dashboard-informational-site"><span style="font-weight: 600; color: #A87352;">Frontend Deployment (LSK Dashboard &amp; Informational Site)</span></h2>
+<h2 id="frontend-deployment-lsk-dashboard-informational-site">Frontend Deployment (LSK Dashboard &amp; Informational Site)</h2>
 <ul>
 <li><strong>Platform:</strong> Vercel (Next.js/Tailwind)</li>
 <li><strong>Branch:</strong> Auto-deployment from <code>main</code></li>
@@ -680,7 +680,7 @@
 <li><strong>Brand Compliance:</strong> Ensure final builds use MyHaki colors, fonts, and logo (<a href="../images/brand-guideline.png">see Brand Guideline</a>)</li>
 </ul>
 <hr />
-<h2 id="mobile-deployment-android-app"><span style="font-weight: 600; color: #A87352;">Mobile Deployment (Android App)</span></h2>
+<h2 id="mobile-deployment-android-app">Mobile Deployment (Android App)</h2>
 <ul>
 <li><strong>Platform:</strong> Google Play Console (Production), Firebase App Distribution (Testing)</li>
 <li><strong>Build:</strong> Release builds via Gradle (<code>assembleRelease</code>), signed with team keystore</li>
@@ -689,7 +689,7 @@
 <li><strong>Brand Compliance:</strong> All assets, colors, and typography must match MyHaki guidelines</li>
 </ul>
 <hr />
-<h2 id="backend-deployment-django-rest-api"><span style="font-weight: 600; color: #A87352;">Backend Deployment (Django REST API)</span></h2>
+<h2 id="backend-deployment-django-rest-api">Backend Deployment (Django REST API)</h2>
 <ul>
 <li><strong>Platform:</strong> Heroku (Staging &amp; Production)</li>
 <li><strong>Branch:</strong> Deploy from <code>main</code></li>
@@ -698,7 +698,7 @@
 <li><strong>Rollback:</strong> Previous stable releases can be redeployed via Heroku dashboard</li>
 </ul>
 <hr />
-<h2 id="ai-agent-deployment-fastapi"><span style="font-weight: 600; color: #A87352;">AI Agent Deployment (FastAPI)</span></h2>
+<h2 id="ai-agent-deployment-fastapi">AI Agent Deployment (FastAPI)</h2>
 <ul>
 <li><strong>Platform:</strong> Google Cloud Platform (Cloud Run, GKE, or Compute Engine)</li>
 <li><strong>Build:</strong> Dockerized FastAPI microservice</li>
@@ -707,7 +707,7 @@
 <li><strong>Monitoring:</strong> Use Google Cloud Monitoring for logs, alerts, and uptime</li>
 </ul>
 <hr />
-<h2 id="cicd-pipeline"><span style="font-weight: 600; color: #A87352;">CI/CD Pipeline</span></h2>
+<h2 id="cicd-pipeline">CI/CD Pipeline</h2>
 <ul>
 <li><strong>Tool:</strong> GitHub Actions</li>
 <li><strong>Pre-Deployment:</strong> All codebases run tests, build, and lint checks before deploy</li>
@@ -716,20 +716,19 @@
 <li><strong>Security:</strong> Secrets scanned before deploy, API keys never exposed</li>
 </ul>
 <hr />
-<h2 id="deployment-flow-diagram"><span style="font-weight: 600; color: #A87352;">Deployment Flow Diagram</span></h2>
-<p><img alt="Deployment Architecture" src="../images/deployment-diagram.png" />
-<em>Request this diagram from the DevOps team or generate via Lucidchart/Figma if missing</em></p>
+<h2 id="deployment-flow-diagram">Deployment Flow Diagram</h2>
+<p><img alt="Deployment Architecture" src="../images/deployment-diagram.png" /></p>
 <hr />
-<h2 id="release-checklist"><span style="font-weight: 600; color: #A87352;">Release Checklist</span></h2>
-<ul>
-<li>[ ] All tests passing (unit, integration, UI)</li>
-<li>[ ] Linting with zero errors</li>
-<li>[ ] Secrets verified (no <code>.env</code> in repo)</li>
-<li>[ ] Brand assets up to date</li>
-<li>[ ] Team notified of release</li>
+<h2 id="release-checklist">Release Checklist</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> All tests passing (unit, integration, UI)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Linting with zero errors</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Secrets verified (no <code>.env</code> in repo)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Brand assets up to date</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Team notified of release</li>
 </ul>
 <hr />
-<h2 id="references"><span style="font-weight: 600; color: #A87352;">References</span></h2>
+<h2 id="references">References</h2>
 <ul>
 <li><a href="../images/brand-guideline.png">Brand Guideline</a></li>
 <li><a href="../code-standards/">Code Standards</a></li>
