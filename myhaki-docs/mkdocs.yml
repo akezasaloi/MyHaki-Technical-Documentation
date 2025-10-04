@@ -51,3 +51,9 @@ nav:
   - FAQ: faq.md
   - Compliance & Legal: compliance.md
   - Database Schema: schema.md
+
+markdown_extensions:
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+

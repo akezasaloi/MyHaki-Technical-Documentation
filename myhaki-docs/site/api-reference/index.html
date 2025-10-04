@@ -820,9 +820,9 @@
 <li>
 <p><strong>Typography:</strong>  </p>
 </li>
-<li><strong>Font:</strong> Poppins</li>
-<li><strong>Headings:</strong> Poppins Bold</li>
-<li><strong>Subheadings:</strong> Poppins SemiBold</li>
+<li><strong>Font:</strong> Poppins  </li>
+<li><strong>Headings:</strong> Poppins Bold  </li>
+<li><strong>Subheadings:</strong> Poppins SemiBold  </li>
 <li>
 <p><strong>Body:</strong> Poppins Regular</p>
 </li>
@@ -857,13 +857,13 @@
 </table>
 <hr />
 <h2 id="main-endpoints"><span style="font-weight: 300; font-size: 1.2em; color: #621616;">Main Endpoints</span></h2>
-<p>All endpoints are RESTful, return JSON, and require JWT authentication unless noted.</p>
+<p>All endpoints are RESTful, return JSON, and require token authentication unless noted.</p>
 <h3 id="authentication-user-management"><span style="font-weight: 300; color: #00000;">Authentication &amp; User Management</span></h3>
 <div class="api-block">
 <pre class="api-dark">
 POST   /register-lawyer/           # Lawyer signup (sets verified)
 POST   /signup/                    # Applicant signup
-POST   /login/                     # Login, returns JWT token
+POST   /login/                     # Login, returns authentication token
 POST   /logout/                    # Logout (invalidate token)
 </pre>
 </div>
@@ -978,56 +978,40 @@ POST /forgotpassword/
 <hr />
 <h2 id="security-authentication"><span style="font-weight: 300; font-size: 1.2em; color: #621616;">Security &amp; Authentication</span></h2>
 <ul>
-<li>All endpoints require JWT authentication (see <code>/login/</code> for token).</li>
-<li>Store API keys and secrets in environment variables (<code>.env</code>). <strong>Never</strong> commit secrets to your repository.</li>
-<li>Role-Based Access Control restricts endpoint access by user type.</li>
-<li>All sensitive data (JWTs, passwords) are encrypted at rest.</li>
+<li>All endpoints require token authentication (see <code>/login/</code> for authentication token).</li>
+<li>To authenticate requests, include the token in the HTTP header:</li>
+</ul>
+<p>Authorization: Token {your_token_here}</p>
+<ul>
+<li>Store API keys and secrets in environment variables (<code>.env</code>). <strong>Never</strong> commit secrets to your repository.  </li>
+<li>Role-Based Access Control restricts endpoint access by user type.  </li>
+<li>All sensitive data (tokens, passwords) are encrypted at rest.</li>
 </ul>
 <hr />
 <h2 id="error-handling-status-codes"><span style="font-weight: 300; font-size: 1.2em; color: #621616;">Error Handling &amp; Status Codes</span></h2>
 <ul>
-<li><strong>200 OK:</strong> Success</li>
-<li><strong>201 Created:</strong> Resource successfully created</li>
-<li><strong>400 Bad Request:</strong> Invalid input</li>
-<li><strong>401 Unauthorized:</strong> Invalid or missing JWT</li>
-<li><strong>403 Forbidden:</strong> Insufficient permissions (RBAC)</li>
-<li><strong>404 Not Found:</strong> Resource does not exist</li>
+<li><strong>200 OK:</strong> Success  </li>
+<li><strong>201 Created:</strong> Resource successfully created  </li>
+<li><strong>400 Bad Request:</strong> Invalid input  </li>
+<li><strong>401 Unauthorized:</strong> Invalid or missing authentication token  </li>
+<li><strong>403 Forbidden:</strong> Insufficient permissions (RBAC)  </li>
+<li><strong>404 Not Found:</strong> Resource does not exist  </li>
 <li><strong>500 Internal Server Error:</strong> Unexpected backend error</li>
 </ul>
 <hr />
 <h2 id="api-versioning-roadmap"><span style="font-weight: 300; font-size: 1.2em; color: #621616;">API Versioning &amp; Roadmap</span></h2>
 <ul>
-<li>Current Version: <code>v1</code></li>
+<li>Current Version: <code>v1</code>  </li>
 <li>Upcoming: <code>/v2/</code> will include expanded endpoints for court integration, offline/USSD support, and enhanced analytics.</li>
 </ul>
 <hr />
 <h2 id="more-information"><span style="font-weight: 300; font-size: 1.2em; color: #621616;">More Information</span></h2>
 <ul>
-<li>For a full list of endpoints and model schemas, see <a href="../developer-docs/">Developer Docs</a>.</li>
-<li>For platform architecture, AI, and integrations, see <a href="../developer-docs/">Developer Docs</a> and <a href="../integrations/">Integrations</a>.</li>
+<li>For a full list of endpoints and model schemas, see <a href="../developer-docs/">Developer Docs</a>.  </li>
+<li>For platform architecture, AI, and integrations, see <a href="../developer-docs/">Developer Docs</a> and <a href="../integrations/">Integrations</a>.  </li>
 <li>For brand assets and guidelines, contact the design team or see <a href="../images/brand-guideline.png">Brand Guideline Screenshot</a>.</li>
 </ul>
 <hr />
-<style>
-.api-block {
-  background: #621616;
-  border-radius: 10px;
-  padding: 18px 18px 10px 18px;
-  margin: 18px 0 24px 0;
-  overflow-x: auto;
-  font-size: 1.09em;
-  font-family: 'Fira Mono', 'Consolas', 'monospace';
-}
-.api-dark {
-  background: #621616 !important;
-  color: #fff !important;
-  border-radius: 6px;
-  padding: 12px 14px 8px 14px;
-  margin: 0;
-  font-size: 1em;
-  font-family: 'Fira Mono', 'Consolas', 'monospace';
-}
-</style>
 
 
 

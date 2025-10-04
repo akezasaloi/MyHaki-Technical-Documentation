@@ -23,7 +23,7 @@ TranslatePlus enables real-time translation of Kiswahili case descriptions to En
    import requests
    response = requests.post(
        "https://api.translateplus.com/translate",
-       headers={"Authorization": f"Bearer {TRANSLATEPLUS_API_KEY}"},
+       headers={"Authorization": f"Token {TRANSLATEPLUS_API_KEY}"},
        json={
            "text": "Kukamatwa wakati wa maandamano",
            "source": "sw",
@@ -103,7 +103,7 @@ Uses Google Gemini (Agentic AI) to classify cases, prioritize urgency, and match
 2. **Sample API Call**
    ```python
    import requests
-   headers = {"Authorization": f"Bearer {GEMINI_API_KEY}"}
+   headers = {"Authorization": f"Token {GEMINI_API_KEY}"}
    data = {
        "case_description": "Arrested during protest",
        "trial_date": "2025-10-02",

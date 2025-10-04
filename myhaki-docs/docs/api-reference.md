@@ -1,6 +1,6 @@
 # MyHaki API Reference
 
-Welcome to the <strong>MyHaki API Reference</strong>! Here you’ll find everything needed to integrate, test, and explore the REST endpoints powering MyHaki’s AI-driven legal aid system.
+Welcome to the **MyHaki API Reference**! Here you’ll find everything needed to integrate, test, and explore the REST endpoints powering MyHaki’s AI-driven legal aid system.
 
 ---
 
@@ -30,9 +30,9 @@ Branding is key for all third-party integrations and admin dashboards. Please us
   - Off White: `#DEF6DD`
 
 - **Typography:**  
-  - **Font:** Poppins
-  - **Headings:** Poppins Bold
-  - **Subheadings:** Poppins SemiBold
+  - **Font:** Poppins  
+  - **Headings:** Poppins Bold  
+  - **Subheadings:** Poppins SemiBold  
   - **Body:** Poppins Regular
 
 - **Values:** Justice, Integrity, Accessibility
@@ -53,7 +53,7 @@ For full brand guidelines, see [Brand Guideline Screenshot](images/brand-guideli
 
 ## <span style="font-weight: 300; font-size: 1.2em; color: #621616;">Main Endpoints</span>
 
-All endpoints are RESTful, return JSON, and require JWT authentication unless noted.
+All endpoints are RESTful, return JSON, and require token authentication unless noted.
 
 ### <span style="font-weight: 300; color: #00000;">Authentication & User Management</span>
 
@@ -61,7 +61,7 @@ All endpoints are RESTful, return JSON, and require JWT authentication unless no
 <pre class="api-dark">
 POST   /register-lawyer/           # Lawyer signup (sets verified)
 POST   /signup/                    # Applicant signup
-POST   /login/                     # Login, returns JWT token
+POST   /login/                     # Login, returns authentication token
 POST   /logout/                    # Logout (invalidate token)
 </pre>
 </div>
@@ -187,57 +187,42 @@ POST /forgotpassword/
 
 ## <span style="font-weight: 300; font-size: 1.2em; color: #621616;">Security & Authentication</span>
 
-- All endpoints require JWT authentication (see `/login/` for token).
-- Store API keys and secrets in environment variables (`.env`). **Never** commit secrets to your repository.
-- Role-Based Access Control restricts endpoint access by user type.
-- All sensitive data (JWTs, passwords) are encrypted at rest.
+- All endpoints require token authentication (see `/login/` for authentication token).
+- To authenticate requests, include the token in the HTTP header:
+
+Authorization: Token {your_token_here}
+
+
+- Store API keys and secrets in environment variables (`.env`). **Never** commit secrets to your repository.  
+- Role-Based Access Control restricts endpoint access by user type.  
+- All sensitive data (tokens, passwords) are encrypted at rest.
 
 ---
 
 ## <span style="font-weight: 300; font-size: 1.2em; color: #621616;">Error Handling & Status Codes</span>
 
-- **200 OK:** Success
-- **201 Created:** Resource successfully created
-- **400 Bad Request:** Invalid input
-- **401 Unauthorized:** Invalid or missing JWT
-- **403 Forbidden:** Insufficient permissions (RBAC)
-- **404 Not Found:** Resource does not exist
+- **200 OK:** Success  
+- **201 Created:** Resource successfully created  
+- **400 Bad Request:** Invalid input  
+- **401 Unauthorized:** Invalid or missing authentication token  
+- **403 Forbidden:** Insufficient permissions (RBAC)  
+- **404 Not Found:** Resource does not exist  
 - **500 Internal Server Error:** Unexpected backend error
 
 ---
 
 ## <span style="font-weight: 300; font-size: 1.2em; color: #621616;">API Versioning & Roadmap</span>
 
-- Current Version: `v1`
+- Current Version: `v1`  
 - Upcoming: `/v2/` will include expanded endpoints for court integration, offline/USSD support, and enhanced analytics.
 
 ---
 
 ## <span style="font-weight: 300; font-size: 1.2em; color: #621616;">More Information</span>
 
-- For a full list of endpoints and model schemas, see [Developer Docs](developer-docs.md).
-- For platform architecture, AI, and integrations, see [Developer Docs](developer-docs.md) and [Integrations](integrations.md).
+- For a full list of endpoints and model schemas, see [Developer Docs](developer-docs.md).  
+- For platform architecture, AI, and integrations, see [Developer Docs](developer-docs.md) and [Integrations](integrations.md).  
 - For brand assets and guidelines, contact the design team or see [Brand Guideline Screenshot](images/brand-guideline.png).
 
 ---
 
-<style>
-.api-block {
-  background: #621616;
-  border-radius: 10px;
-  padding: 18px 18px 10px 18px;
-  margin: 18px 0 24px 0;
-  overflow-x: auto;
-  font-size: 1.09em;
-  font-family: 'Fira Mono', 'Consolas', 'monospace';
-}
-.api-dark {
-  background: #621616 !important;
-  color: #fff !important;
-  border-radius: 6px;
-  padding: 12px 14px 8px 14px;
-  margin: 0;
-  font-size: 1em;
-  font-family: 'Fira Mono', 'Consolas', 'monospace';
-}
-</style>

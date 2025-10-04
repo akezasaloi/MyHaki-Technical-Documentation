@@ -2,7 +2,7 @@
 
 
 
-## <span style="font-weight: 600; color: #A87352;">Frontend Deployment (LSK Dashboard & Informational Site)</span>
+## Frontend Deployment (LSK Dashboard & Informational Site)
 
 - **Platform:** Vercel (Next.js/Tailwind)
 - **Branch:** Auto-deployment from `main`
@@ -12,7 +12,7 @@
 
 ---
 
-## <span style="font-weight: 600; color: #A87352;">Mobile Deployment (Android App)</span>
+## Mobile Deployment (Android App)
 
 - **Platform:** Google Play Console (Production), Firebase App Distribution (Testing)
 - **Build:** Release builds via Gradle (`assembleRelease`), signed with team keystore
@@ -22,7 +22,7 @@
 
 ---
 
-## <span style="font-weight: 600; color: #A87352;">Backend Deployment (Django REST API)</span>
+## Backend Deployment (Django REST API)
 
 - **Platform:** Heroku (Staging & Production)
 - **Branch:** Deploy from `main`
@@ -32,7 +32,7 @@
 
 ---
 
-## <span style="font-weight: 600; color: #A87352;">AI Agent Deployment (FastAPI)</span>
+## AI Agent Deployment (FastAPI)
 
 - **Platform:** Google Cloud Platform (Cloud Run, GKE, or Compute Engine)
 - **Build:** Dockerized FastAPI microservice
@@ -42,7 +42,7 @@
 
 ---
 
-## <span style="font-weight: 600; color: #A87352;">CI/CD Pipeline</span>
+## CI/CD Pipeline
 
 - **Tool:** GitHub Actions
 - **Pre-Deployment:** All codebases run tests, build, and lint checks before deploy
@@ -52,24 +52,23 @@
 
 ---
 
-## <span style="font-weight: 600; color: #A87352;">Deployment Flow Diagram</span>
+## Deployment Flow Diagram
 
 ![Deployment Architecture](images/deployment-diagram.png)
-*Request this diagram from the DevOps team or generate via Lucidchart/Figma if missing*
 
 ---
 
-## <span style="font-weight: 600; color: #A87352;">Release Checklist</span>
+## Release Checklist
 
-- [ ] All tests passing (unit, integration, UI)
-- [ ] Linting with zero errors
-- [ ] Secrets verified (no `.env` in repo)
-- [ ] Brand assets up to date
-- [ ] Team notified of release
+- [x] All tests passing (unit, integration, UI)
+- [x] Linting with zero errors
+- [x] Secrets verified (no `.env` in repo)
+- [x] Brand assets up to date
+- [x] Team notified of release
 
 ---
 
-## <span style="font-weight: 600; color: #A87352;">References</span>
+## References
 
 - [Brand Guideline](images/brand-guideline.png)
 - [Code Standards](code-standards.md)

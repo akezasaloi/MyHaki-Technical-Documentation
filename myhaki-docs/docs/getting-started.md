@@ -4,9 +4,9 @@ Welcome to **MyHaki**! This guide walks you through onboarding, authentication, 
 
 ---
 
-## <h2>1. User Onboarding Flows</h2>
+## 1. User Onboarding Flows
 
-#### <h4>A. Lawyer Onboarding (Android App)</h4>
+#### A. Lawyer Onboarding (Android App)
 - **Fields:** Practice Number, First Name, Last Name, Email Address, Password
 
 **API Endpoint:**  
@@ -35,7 +35,7 @@ Welcome to **MyHaki**! This guide walks you through onboarding, authentication, 
 </pre>
 
 **Backend Logic (DRF):**
-```python
+```
 class RegisterLawyerView(APIView):
     def post(self, request):
         serializer = LawyerProfileSerializer(data=request.data)
@@ -50,7 +50,7 @@ class RegisterLawyerView(APIView):
 
 ---
 
-### <span style="color:#A87352;">B. Applicant/Detainee Onboarding (Android App)</span>
+### B. Applicant/Detainee Onboarding (Android App)
 - **Fields:** First Name, Last Name, Email, Password, Role
 
 **API Endpoint:**  
@@ -80,7 +80,7 @@ class RegisterLawyerView(APIView):
 </pre>
 
 **Backend Logic:**
-```python
+```
 class ApplicantSignUpView(APIView):
     def post(self, request):
         serializer = ApplicantSignUpSerializer(data=request.data)
@@ -95,7 +95,7 @@ class ApplicantSignUpView(APIView):
 
 ---
 
-### <span style="color:#A87352;">C. LSK Admin Onboarding (Web Dashboard)</span>
+### C. LSK Admin Onboarding (Web Dashboard)
 - **Fields:** Email, Password
 
 **API Endpoint:**  
@@ -112,20 +112,20 @@ class ApplicantSignUpView(APIView):
 **Sample Response:**
 <pre class="api-dark">
 {
-  "token": "jwt-token-string"
+  "token": "authentication-token-string"
 }
 </pre>
 
 **Backend Logic:**
-```python
+```
 class LoginView(APIView):
     def post(self, request):
         email = request.data.get('email')
         password = request.data.get('password')
         user = authenticate(username=email, password=password)
         if user:
-            refresh = RefreshToken.for_user(user)
-            return Response({'token': str(refresh.access_token)})
+            token, created = Token.objects.get_or_create(user=user)
+            return Response({'token': token.key})
         return Response({'error': 'Invalid credentials.'}, status=401)
 ```
 
@@ -133,7 +133,7 @@ class LoginView(APIView):
 
 ---
 
-## <span style="font-weight: 600; color: #A87352;">2. Authentication & Security</span>
+## 2. Authentication & Security
 
 **Login API (All Users):**  
 <pre class="api-dark">POST /login/</pre>
@@ -149,13 +149,13 @@ class LoginView(APIView):
 **Sample Response:**  
 <pre class="api-dark">
 {
-  "token": "jwt-token-string"
+  "token": "authentication-token-string"
 }
 </pre>
 
 ---
 
-## <span style="font-weight: 600; color: #A87352;">3. Forgot Password, OTP Verification & Reset Flow (All Users)</span>
+## 3. Forgot Password, OTP Verification & Reset Flow (All Users)
 
 **Step 1: Initiate Password Reset**  
 <pre class="api-dark">POST /forgotpassword/</pre>
@@ -202,7 +202,7 @@ _Response:_
 </pre>
 
 **Backend Logic for OTP/Reset:**
-```python
+```
 class ForgotPasswordView(APIView):
     def post(self, request):
         email = request.data.get('email')
@@ -233,7 +233,7 @@ class ResetPasswordView(APIView):
 
 ---
 
-## <span style="font-weight: 600; color: #A87352;">4. First Steps After Login</span>
+## 4. First Steps After Login
 
 - **Applicants:**  
   - Submit new case applications, upload documents, and track case status.
@@ -248,7 +248,7 @@ class ResetPasswordView(APIView):
 
 ---
 
-## <span style="font-weight: 600; color: #A87352;">5. Security & Support</span>
+## 5. Security & Support
 
 - All authentication flows use secure HTTPS and encrypted storage.
 - For help, access support via the app or dashboard.

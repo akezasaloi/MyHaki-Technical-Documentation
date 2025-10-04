@@ -72,7 +72,7 @@
 
 ---
 
-## Platform at a Glance
+## Platform Highlights
 
 <div style="text-align: center; margin: 2em 0;">
   <img src="images/deployment-diagram.png" alt="MyHaki Platform Overview" class="platform-img">
