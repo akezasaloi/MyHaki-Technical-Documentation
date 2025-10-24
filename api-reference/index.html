@@ -11,22 +11,22 @@
         <link rel="canonical" href="https://myhaki.vercel.app/api-reference/">
       
       
-        <link rel="prev" href="../integrations/">
+        <link rel="prev" href="../web/">
       
       
-        <link rel="next" href="../qa-process/">
+        <link rel="next" href="../ai/">
       
       
       <link rel="icon" href="../images/icon-logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>API Reference - MyHaki Technical Documentation</title>
+        <title>Backend - MyHaki Technical Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              API Reference
+              Backend
             
           </span>
         </div>
@@ -261,12 +261,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting-started/" class="md-nav__link">
+      <a href="../developer-docs/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Getting Started
+    How It Works
     
   </span>
   
@@ -305,12 +305,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer-docs/" class="md-nav__link">
+      <a href="../getting-started/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    How It Works
+    Frontend Mobile
     
   </span>
   
@@ -327,12 +327,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../integrations/" class="md-nav__link">
+      <a href="../web/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Integrations
+    Frontend web
     
   </span>
   
@@ -363,7 +363,7 @@
   
   
   <span class="md-ellipsis">
-    API Reference
+    Backend
     
   </span>
   
@@ -376,7 +376,7 @@
   
   
   <span class="md-ellipsis">
-    API Reference
+    Backend
     
   </span>
   
@@ -399,27 +399,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#database-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Schema
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#live-api-docs" class="md-nav__link">
     <span class="md-ellipsis">
       Live API Docs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#brand-guidelines-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      Brand Guidelines Reference
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-documentation-screenshots" class="md-nav__link">
-    <span class="md-ellipsis">
-      API Documentation Screenshots
     </span>
   </a>
   
@@ -491,15 +482,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sample-ui-screens-api-flows" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sample UI Screens &amp; API Flows
-    </span>
-  </a>
   
 </li>
       
@@ -605,12 +587,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../qa-process/" class="md-nav__link">
+      <a href="../ai/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Q/A Process
+    Ai
     
   </span>
   
@@ -627,12 +609,34 @@
   
   
     <li class="md-nav__item">
-      <a href="../deployment-process/" class="md-nav__link">
+      <a href="../integrations/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Deployment Process
+    Integrations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qa-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Q/A Process
     
   </span>
   
@@ -693,78 +697,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../changelog/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Changelog
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    FAQ
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../compliance/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Compliance & Legal
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../schema/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Database Schema
     
   </span>
   
@@ -793,69 +731,15 @@
 <h1 id="myhaki-api-reference">MyHaki API Reference</h1>
 <p>Welcome to the <strong>MyHaki API Reference</strong>! Here you’ll find everything needed to integrate, test, and explore the REST endpoints powering MyHaki’s AI-driven legal aid system.</p>
 <hr />
+<h2 id="database-schema"><span style="font-weight: 600; color: #A87352;">Database Schema</span></h2>
+<p>Designed for maintainability, access control, and performance using PostgreSQL<br />
+- Core tables: users, lawyers, detainees, cases, assignments, CPD points, vector embeddings (pgvector)</p>
+<p><img alt="Database Schema" src="../images/erd.png" /></p>
+<hr />
 <h2 id="live-api-docs"><span style="font-weight: 300; font-size: 1.3em; color: #683929; font-family:'Poppins',sans-serif;">Live API Docs</span></h2>
 <ul>
 <li><strong>Swagger UI:</strong> <a href="https://myhaki-3e53581dd62e.herokuapp.com/swagger/">View Swagger Documentation</a></li>
-<li><strong>Postman Online Docs:</strong> </li>
 </ul>
-<hr />
-<h2 id="brand-guidelines-reference"><span style="font-weight: 300; font-size: 1.3em; color: #A87352;">Brand Guidelines Reference</span></h2>
-<p>Branding is key for all third-party integrations and admin dashboards. Please use the official assets and styles below:</p>
-<ul>
-<li><strong>Logo &amp; Marks:</strong><br />
-<img alt="Logo Mark Example 1" src="../images/myhaki-logo.png" />  </li>
-</ul>
-<p><img alt="Logo Mark Example 2" src="../images/icon-logo.png" />  </p>
-<ul>
-<li><strong>Color Palette:</strong>  </li>
-<li>Deep Red: <code>#621616</code></li>
-<li>Coffee: <code>#683929</code></li>
-<li>Light Brown: <code>#A87352</code></li>
-<li>Pale Pink: <code>#E5BFA7</code></li>
-<li>Sage Green: <code>#AABDA9</code></li>
-<li>Mint: <code>#C7DFC6</code></li>
-<li>
-<p>Off White: <code>#DEF6DD</code></p>
-</li>
-<li>
-<p><strong>Typography:</strong>  </p>
-</li>
-<li><strong>Font:</strong> Poppins  </li>
-<li><strong>Headings:</strong> Poppins Bold  </li>
-<li><strong>Subheadings:</strong> Poppins SemiBold  </li>
-<li>
-<p><strong>Body:</strong> Poppins Regular</p>
-</li>
-<li>
-<p><strong>Values:</strong> Justice, Integrity, Accessibility</p>
-</li>
-</ul>
-<p>For full brand guidelines, see <a href="../images/brand-guideline.png">Brand Guideline Screenshot</a>.</p>
-<hr />
-<h2 id="api-documentation-screenshots"><span style="font-weight: 300; font-size: 1.3em; color: #683929;">API Documentation Screenshots</span></h2>
-<table>
-<thead>
-<tr>
-<th><span style="font-weight:600">Swagger UI Example</span></th>
-<th><span style="font-weight:600">Postman API Docs Example</span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img alt="Swagger Screenshot 1" src="../images/swagger1.png" /></td>
-<td><img alt="Postman Screenshot" src="../images/swagger.png" /></td>
-</tr>
-<tr>
-<td><img alt="Swagger Screenshot 2" src="../images/swagger2.png" /></td>
-<td><img alt="Postman Screenshot" src="../images/doc1.png" /></td>
-</tr>
-<tr>
-<td><img alt="Swagger Screenshot 3" src="../images/swagger3.png" /></td>
-<td><img alt="Postman Screenshot" src="../images/doc2.png" /></td>
-</tr>
-</tbody>
-</table>
-<hr />
 <h2 id="main-endpoints"><span style="font-weight: 300; font-size: 1.2em; color: #621616;">Main Endpoints</span></h2>
 <p>All endpoints are RESTful, return JSON, and require token authentication unless noted.</p>
 <h3 id="authentication-user-management"><span style="font-weight: 300; color: #00000;">Authentication &amp; User Management</span></h3>
@@ -916,20 +800,6 @@ GET    /users/                    # List all users (admin, RBAC)
 </pre>
 </div>
 
-<hr />
-<h2 id="sample-ui-screens-api-flows"><span style="font-weight: 300; font-size: 1.2em; color: #621616;">Sample UI Screens &amp; API Flows</span></h2>
-<ul>
-<li>
-<p><strong>LSK Dashboard Example:</strong><br />
-<img alt="Admin Dashboard" src="../images/lsk-dashboard.png" /></p>
-</li>
-<li>
-<p><strong>Mobile App Case Flow:</strong><br />
-<img alt="Mobile App Case List" src="../images/mobile-cases.png" />  </p>
-</li>
-</ul>
-<p><img alt="Mobile App Case Details" src="../images/mobile-case-details.png" /></p>
-<hr />
 <h2 id="example-api-usage"><span style="font-weight: 300; font-size: 1.2em; color: #621616;">Example API Usage</span></h2>
 <h3 id="lawyer-registration"><span style="font-weight: 300; color: #00000;">Lawyer Registration</span></h3>
 <div class="api-block">
@@ -1012,6 +882,43 @@ POST /forgotpassword/
 <li>For brand assets and guidelines, contact the design team or see <a href="../images/brand-guideline.png">Brand Guideline Screenshot</a>.</li>
 </ul>
 <hr />
+<h1 id="deployment-process">Deployment Process</h1>
+<hr />
+<h2 id="backend-deployment-django-rest-api">Backend Deployment (Django REST API)</h2>
+<ul>
+<li><strong>Naming:</strong></li>
+<li>snake_case for variables, functions, files</li>
+<li>PascalCase for classes and models</li>
+<li><strong>Structure:</strong> Place serializers/views in separate files unless tightly coupled.</li>
+<li><strong>Testing:</strong> Use Django’s built-in test runner (<code>python manage.py test</code>), aim for &gt;90% coverage.</li>
+<li><strong>API:</strong> Follow REST conventions, use OpenAPI schema.</li>
+<li><strong>Security:</strong> Validate all input, use Django’s CSRF and authentication mechanisms.</li>
+<li><strong>Platform:</strong> Heroku (Staging &amp; Production)</li>
+<li><strong>Branch:</strong> Deploy from <code>main</code></li>
+<li><strong>Environment Variables:</strong> Managed securely in Heroku dashboard; never commit secrets</li>
+<li><strong>Scaling:</strong> Automatic scaling via Heroku dynos based on demand</li>
+<li><strong>Rollback:</strong> Previous stable releases can be redeployed via Heroku dashboard</li>
+</ul>
+<p><strong>Steps</strong></p>
+<ul>
+<li>Development and code changes happen on feature branches.  </li>
+<li>GitHub Actions run automated tests and linting upon each push.  </li>
+<li>Merging into the <code>main</code> branch triggers a Heroku deployment.  </li>
+<li>Heroku pulls the latest code and deploys it to the staging or production environment.  </li>
+<li>Environment variables and secrets are securely managed within the Heroku dashboard, never committed to code.  </li>
+<li>Heroku Dynos scale automatically based on live traffic demands.  </li>
+<li>In the event of deployment issues, rollback to previous stable releases is possible directly from the Heroku dashboard. </li>
+</ul>
+<hr />
+<h2 id="references-further-reading"><span style="font-weight:600; color:#A87352;">References &amp; Further Reading</span></h2>
+<ul>
+<li><a href="https://www.translateplus.com/">TranslatePlus API Docs</a></li>
+<li><a href="https://locationiq.com/docs">LocationIQ API</a></li>
+<li><a href="https://ai.google.dev/gemini">Gemini (Google AI) Docs</a></li>
+<li><a href="https://docs.celeryproject.org/en/stable/">Celery &amp; Redis Docs</a></li>
+<li><a href="https://github.com/pgvector/pgvector">pgvector for PostgreSQL</a></li>
+<li><a href="./">MyHaki API Reference</a></li>
+</ul>
 
 
 
