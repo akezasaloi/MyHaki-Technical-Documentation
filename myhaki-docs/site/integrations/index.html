@@ -11,14 +11,14 @@
         <link rel="canonical" href="https://myhaki.vercel.app/integrations/">
       
       
-        <link rel="prev" href="../developer-docs/">
+        <link rel="prev" href="../ai/">
       
       
-        <link rel="next" href="../api-reference/">
+        <link rel="next" href="../qa-process/">
       
       
       <link rel="icon" href="../images/icon-logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -261,12 +261,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting-started/" class="md-nav__link">
+      <a href="../developer-docs/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Getting Started
+    How It Works
     
   </span>
   
@@ -305,12 +305,78 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer-docs/" class="md-nav__link">
+      <a href="../getting-started/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    How It Works
+    Frontend Mobile
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Frontend web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Backend
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ai
     
   </span>
   
@@ -454,56 +520,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api-reference/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    API Reference
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../qa-process/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Q/A Process
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../deployment-process/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Deployment Process
     
   </span>
   
@@ -564,78 +586,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../changelog/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Changelog
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    FAQ
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../compliance/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Compliance & Legal
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../schema/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Database Schema
     
   </span>
   
@@ -687,7 +643,7 @@ TranslatePlus enables real-time translation of Kiswahili case descriptions to En
            "target": "en"
        }
    )
-   print(response.json())  # {'translation': 'Arrested during demonstration'}</code></p>
+   print(response.json())</code></p>
 </li>
 <li>
 <p><strong>API Endpoint (Backend):</strong>
@@ -782,13 +738,6 @@ Uses Google Gemini (Agentic AI) to classify cases, prioritize urgency, and match
 </p>
 </li>
 <li>
-<p><strong>Troubleshooting:</strong></p>
-</li>
-<li><strong>Quota exceeded:</strong> Monitor API usage.</li>
-<li>
-<p><strong>Latency:</strong> Show loading indicator in UI.</p>
-</li>
-<li>
 <p><strong>Best Practices:</strong></p>
 </li>
 <li>Anonymize sensitive data before sending.</li>
@@ -818,13 +767,6 @@ Automates assignment of cases to lawyers based on location, availability, and ex
  <br />
 <pre class="api-dark">POST /case-assignments/</pre>
 </p>
-</li>
-<li>
-<p><strong>Troubleshooting:</strong></p>
-</li>
-<li><strong>Task not running:</strong> Check Celery worker logs.</li>
-<li>
-<p><strong>Redis connection error:</strong> Verify Redis service.</p>
 </li>
 <li>
 <p><strong>Best Practices:</strong></p>

@@ -22,7 +22,8 @@
 }
 </pre>
 
-<img src="/images/lsk-signin.png" alt="LSK Sign In" class="logo">
+<!-- ![Forgot Password](images/lsk-signin.png)  -->
+![Brand Guideline Screenshot](images/lsk-signin.png)
 
 ---
 
@@ -96,10 +97,9 @@ _Response:_
 
 ---
 
-<div style="text-align: center;">
-  <img src="/images/forgot-password.png" alt="Forgot Password" width="200" style="height: auto; display: inline-block; margin-right: 10px;" />
-  <img src="/images/verify-code.png" alt="Verify OTP" width="200" style="height: auto; display: inline-block; margin-left: 10px;" />
-</div>
+![Forgot Password](images/forgot-password.png) 
+![Verify OTP](images/verify-code.png)
+
 
 
 ---
@@ -140,7 +140,8 @@ _Response:_
 
 ## Code Structure
 
-<img src="/images/code.png" alt="MyHaki Logo" class="logo">
+![MyHaki Logo](/images/code.png)
+
 
 ---
 ## Frontend Deployment (LSK Dashboard & Informational Site)

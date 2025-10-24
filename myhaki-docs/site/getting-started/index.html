@@ -11,22 +11,22 @@
         <link rel="canonical" href="https://myhaki.vercel.app/getting-started/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../features/">
       
       
-        <link rel="next" href="../features/">
+        <link rel="next" href="../web/">
       
       
       <link rel="icon" href="../images/icon-logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>Getting Started - MyHaki Technical Documentation</title>
+        <title>Frontend Mobile - MyHaki Technical Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Getting Started
+              Frontend Mobile
             
           </span>
         </div>
@@ -258,6 +258,50 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../developer-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How It Works
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -275,7 +319,7 @@
   
   
   <span class="md-ellipsis">
-    Getting Started
+    Frontend Mobile
     
   </span>
   
@@ -288,7 +332,7 @@
   
   
   <span class="md-ellipsis">
-    Getting Started
+    Frontend Mobile
     
   </span>
   
@@ -333,15 +377,6 @@
   <a href="#b-applicantdetainee-onboarding-android-app" class="md-nav__link">
     <span class="md-ellipsis">
       B. Applicant/Detainee Onboarding (Android App)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c-lsk-admin-onboarding-web-dashboard" class="md-nav__link">
-    <span class="md-ellipsis">
-      C. LSK Admin Onboarding (Web Dashboard)
     </span>
   </a>
   
@@ -403,12 +438,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../features/" class="md-nav__link">
+      <a href="../web/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Features
+    Frontend web
     
   </span>
   
@@ -425,12 +460,34 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer-docs/" class="md-nav__link">
+      <a href="../api-reference/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    How It Works
+    Backend
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ai
     
   </span>
   
@@ -469,56 +526,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api-reference/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    API Reference
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../qa-process/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Q/A Process
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../deployment-process/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Deployment Process
     
   </span>
   
@@ -579,78 +592,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../changelog/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Changelog
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    FAQ
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../compliance/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Compliance & Legal
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../schema/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Database Schema
     
   </span>
   
@@ -718,8 +665,11 @@
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
 </code></pre>
-<p><img alt="Lawyer Sign Up" src="../images/lawyer-signup.png" />
-<img alt="Lawyer Sign In" src="../images/lawyer-signin.png" /></p>
+<div style="text-align: center;">
+  <img src="/images/lawyer-signup.png" alt="Forgot Password" width="200" style="height: auto; display: inline-block; margin-right: 10px;" />
+  <img src="/images/lawyer-signin.png" alt="Verify OTP" width="200" style="height: auto; display: inline-block; margin-left: 10px;" />
+</div>
+
 <hr />
 <h3 id="b-applicantdetainee-onboarding-android-app">B. Applicant/Detainee Onboarding (Android App)</h3>
 <ul>
@@ -751,52 +701,8 @@
 }
 </pre>
 
-<p><strong>Backend Logic:</strong></p>
-<pre><code>class ApplicantSignUpView(APIView):
-    def post(self, request):
-        serializer = ApplicantSignUpSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=201)
-        return Response(serializer.errors, status=400)
-</code></pre>
-<p><img alt="Applicant Sign Up" src="../images/applicant-signup.png" />
-<img alt="Applicant Sign In" src="../images/applicant-signin.png" /></p>
-<hr />
-<h3 id="c-lsk-admin-onboarding-web-dashboard">C. LSK Admin Onboarding (Web Dashboard)</h3>
-<ul>
-<li><strong>Fields:</strong> Email, Password</li>
-</ul>
-<p><strong>API Endpoint:</strong>  </p>
-<pre class="api-dark">POST /login/</pre>
-
-<p><strong>Sample Request (from Swagger):</strong></p>
-<pre class="api-dark">
-{
-  "email": "admin.lsk@example.com",
-  "password": "Password123@"
-}
-</pre>
-
-<p><strong>Sample Response:</strong></p>
-<pre class="api-dark">
-{
-  "token": "authentication-token-string"
-}
-</pre>
-
-<p><strong>Backend Logic:</strong></p>
-<pre><code>class LoginView(APIView):
-    def post(self, request):
-        email = request.data.get('email')
-        password = request.data.get('password')
-        user = authenticate(username=email, password=password)
-        if user:
-            token, created = Token.objects.get_or_create(user=user)
-            return Response({'token': token.key})
-        return Response({'error': 'Invalid credentials.'}, status=401)
-</code></pre>
-<p><img alt="LSK Sign In" src="../images/lsk-signin.png" /></p>
+<p><img alt="Forgot Password" src="../images/applicant-signup.png" /> 
+<img alt="Verify OTP" src="../images/applicant-signin.png" /></p>
 <hr />
 <h2 id="2-authentication-security">2. Authentication &amp; Security</h2>
 <p><strong>Login API (All Users):</strong>  </p>
@@ -863,33 +769,8 @@
 }
 </pre>
 
-<p><strong>Backend Logic for OTP/Reset:</strong></p>
-<pre><code>class ForgotPasswordView(APIView):
-    def post(self, request):
-        email = request.data.get('email')
-        # Generate and send OTP, cache for validation
-        ...
-
-class VerifyCodeView(APIView):
-    def post(self, request):
-        # Validate code from cache/session
-        ...
-
-class ResetPasswordView(APIView):
-    def post(self, request):
-        email = request.data.get('email')
-        password = request.data.get('password')
-        user = User.objects.filter(email=email).first()
-        if not user:
-            return Response({&quot;detail&quot;: &quot;User not found.&quot;}, status=400)
-        user.set_password(password)
-        user.save()
-        cache.delete(f'reset_code_{email}')
-        return Response({&quot;detail&quot;: &quot;Password reset successful.&quot;}, status=201)
-</code></pre>
 <p><img alt="Forgot Password" src="../images/forgot-password.png" />
-<img alt="Verify OTP" src="../images/verify-code.png" />
-<img alt="Reset Password" src="../images/reset-password.png" /></p>
+<img alt="Verify OTP" src="../images/verify-code.png" /></p>
 <hr />
 <h2 id="4-first-steps-after-login">4. First Steps After Login</h2>
 <ul>
@@ -915,6 +796,44 @@ class ResetPasswordView(APIView):
 <ul>
 <li>All authentication flows use secure HTTPS and encrypted storage.</li>
 <li>For help, access support via the app or dashboard.</li>
+</ul>
+<hr />
+<h1 id="deployment-process">Deployment Process</h1>
+<ul>
+<li><strong>Architecture:</strong> MVVM, repository pattern, Koin for DI.</li>
+<li><strong>Naming:</strong></li>
+<li>camelCase for variables and methods</li>
+<li>PascalCase for classes, composables, ViewModels</li>
+<li>SCREAMING_SNAKE_CASE for constants</li>
+<li><strong>File Structure:</strong> Group by feature, separate data/model/viewmodel/ui.</li>
+<li><strong>Testing:</strong> Use JUnit, MockK for unit tests; Compose Test for UI.</li>
+<li><strong>Dependency Injection:</strong> Always inject dependencies via Koin modules.</li>
+<li><strong>Secure Storage:</strong> Use EncryptedSharedPreferences for sensitive data.</li>
+<li><strong>Accessibility:</strong> Use Compose’s accessibility APIs for labels, hints, focus.</li>
+</ul>
+<h2 id="code-structure">Code Structure</h2>
+<p><img alt="LSK Sign In" src="../images/app.png" /></p>
+<hr />
+<h2 id="mobile-deployment-android-app">Mobile Deployment (Android App)</h2>
+<ul>
+<li><strong>Platform:</strong> Google Play Console (Production), Firebase App Distribution (Testing)</li>
+<li><strong>Build:</strong> Release builds via Gradle (<code>assembleRelease</code>), signed with team keystore</li>
+<li><strong>Environment Variables:</strong> API URLs, keys stored in <code>local.properties</code> and encrypted secrets</li>
+<li><strong>CI:</strong> GitHub Actions runs unit/UI tests on push; releases only after passing all tests</li>
+<li><strong>Brand Compliance:</strong> All assets, colors, and typography must match MyHaki guidelines</li>
+</ul>
+<p><strong>Steps</strong></p>
+<ul>
+<li>Feature development occurs on dedicated branches.  </li>
+<li>Changes are pushed to GitHub, triggering automated unit and UI tests through GitHub Actions.  </li>
+<li>Upon successful tests, the Gradle build process is initiated using <code>assembleRelease</code>.  </li>
+<li>The generated APK is signed using the team’s keystore.  </li>
+<li>Environment variables such as API URLs and keys are securely managed via <code>local.properties</code> and encrypted secrets.  </li>
+<li>Release APKs are distributed through two channels:  </li>
+<li>Firebase App Distribution for testing builds.  </li>
+<li>Google Play Console for production release.  </li>
+<li>Prior to submission, all assets and UI elements are verified to meet MyHaki’s brand compliance standards.  </li>
+<li>The production APK is published officially on Google Play after all validations. </li>
 </ul>
 <hr />
 <style>
