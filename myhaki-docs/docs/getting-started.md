@@ -47,8 +47,8 @@ class RegisterLawyerView(APIView):
 
 
 
-![Forgot Password](/images/lawyer-signup.png)
- ![Verify OTP](/images/lawyer-signin.png)
+![Lawyer signup](/images/lawyer-signup.png)
+![Lawyer signin](/images/lawyer-signin.png)
 
 ---
 
