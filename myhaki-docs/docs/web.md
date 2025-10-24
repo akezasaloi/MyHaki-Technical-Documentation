@@ -126,7 +126,8 @@ _Response:_
 
 ---
 
-# Deployment Process
+**Code standards**
+
 
 - **Components:** Always use functional components for consistency and performance.
 - **Naming:**
@@ -140,9 +141,11 @@ _Response:_
 
 ## Code Structure
 
-![MyHaki Logo](/images/code.png)
+![MyHaki Logo](images/code.png)
 
 
+---
+# Deployment Process
 ---
 ## Frontend Deployment (LSK Dashboard & Informational Site)
 

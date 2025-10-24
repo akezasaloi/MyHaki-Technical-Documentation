@@ -189,7 +189,7 @@ _Response:_
 ---
 
 
-# Deployment Process
+**Code standards**
 
 
 - **Architecture:** MVVM, repository pattern, Koin for DI.
@@ -210,7 +210,8 @@ _Response:_
 
 ---
 
-
+# Deployment Process
+---
 
 ## Mobile Deployment (Android App)
 
