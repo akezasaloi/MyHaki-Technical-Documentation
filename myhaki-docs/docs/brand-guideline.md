@@ -48,4 +48,6 @@
 - Android app and dashboard use deep red banners, rounded cards, and Poppins font.
 - All interfaces show the logo on splash and navigation.
 
+![Brand Guideline Screenshot](images/brand-guideline.png)
+
 ---

@@ -45,8 +45,12 @@ class RegisterLawyerView(APIView):
         return Response(serializer.errors, status=400)
 ```
 
-![Lawyer Sign Up](images/lawyer-signup.png)
-![Lawyer Sign In](images/lawyer-signin.png)
+
+
+<div style="text-align: center;">
+  <img src="/images/lawyer-signup.png" alt="Forgot Password" width="200" style="height: auto; display: inline-block; margin-right: 10px;" />
+  <img src="/images/lawyer-signin.png" alt="Verify OTP" width="200" style="height: auto; display: inline-block; margin-left: 10px;" />
+</div>
 
 ---
 
@@ -79,59 +83,13 @@ class RegisterLawyerView(APIView):
 }
 </pre>
 
-**Backend Logic:**
-```
-class ApplicantSignUpView(APIView):
-    def post(self, request):
-        serializer = ApplicantSignUpSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=201)
-        return Response(serializer.errors, status=400)
-```
 
-![Applicant Sign Up](images/applicant-signup.png)
-![Applicant Sign In](images/applicant-signin.png)
-
+<div style="text-align: center;">
+  <img src="/images/applicant-signup.png" alt="Forgot Password" width="200" style="height: auto; display: inline-block; margin-right: 10px;" />
+  <img src="/images/applicant-signin.png" alt="Verify OTP" width="200" style="height: auto; display: inline-block; margin-left: 10px;" />
+</div>
 ---
 
-### C. LSK Admin Onboarding (Web Dashboard)
-- **Fields:** Email, Password
-
-**API Endpoint:**  
-<pre class="api-dark">POST /login/</pre>
-
-**Sample Request (from Swagger):**
-<pre class="api-dark">
-{
-  "email": "admin.lsk@example.com",
-  "password": "Password123@"
-}
-</pre>
-
-**Sample Response:**
-<pre class="api-dark">
-{
-  "token": "authentication-token-string"
-}
-</pre>
-
-**Backend Logic:**
-```
-class LoginView(APIView):
-    def post(self, request):
-        email = request.data.get('email')
-        password = request.data.get('password')
-        user = authenticate(username=email, password=password)
-        if user:
-            token, created = Token.objects.get_or_create(user=user)
-            return Response({'token': token.key})
-        return Response({'error': 'Invalid credentials.'}, status=401)
-```
-
-![LSK Sign In](images/lsk-signin.png)
-
----
 
 ## 2. Authentication & Security
 
@@ -201,35 +159,13 @@ _Response:_
 }
 </pre>
 
-**Backend Logic for OTP/Reset:**
-```
-class ForgotPasswordView(APIView):
-    def post(self, request):
-        email = request.data.get('email')
-        # Generate and send OTP, cache for validation
-        ...
+!
+<div style="text-align: center;">
+  <img src="/images/forgot-password.png" alt="Forgot Password" width="200" style="height: auto; display: inline-block; margin-right: 10px;" />
+  <img src="/images/verify-code.png" alt="Verify OTP" width="200" style="height: auto; display: inline-block; margin-left: 10px;" />
+</div>
 
-class VerifyCodeView(APIView):
-    def post(self, request):
-        # Validate code from cache/session
-        ...
 
-class ResetPasswordView(APIView):
-    def post(self, request):
-        email = request.data.get('email')
-        password = request.data.get('password')
-        user = User.objects.filter(email=email).first()
-        if not user:
-            return Response({"detail": "User not found."}, status=400)
-        user.set_password(password)
-        user.save()
-        cache.delete(f'reset_code_{email}')
-        return Response({"detail": "Password reset successful."}, status=201)
-```
-
-![Forgot Password](images/forgot-password.png)
-![Verify OTP](images/verify-code.png)
-![Reset Password](images/reset-password.png)
 
 ---
 
@@ -254,6 +190,55 @@ class ResetPasswordView(APIView):
 - For help, access support via the app or dashboard.
 
 ---
+
+
+# Deployment Process
+
+
+- **Architecture:** MVVM, repository pattern, Koin for DI.
+- **Naming:**
+  - camelCase for variables and methods
+  - PascalCase for classes, composables, ViewModels
+  - SCREAMING_SNAKE_CASE for constants
+- **File Structure:** Group by feature, separate data/model/viewmodel/ui.
+- **Testing:** Use JUnit, MockK for unit tests; Compose Test for UI.
+- **Dependency Injection:** Always inject dependencies via Koin modules.
+- **Secure Storage:** Use EncryptedSharedPreferences for sensitive data.
+- **Accessibility:** Use Compose’s accessibility APIs for labels, hints, focus.
+
+## Code Structure
+
+<img src="/images/app.png" alt="LSK Sign In" class="logo">
+
+---
+
+
+
+## Mobile Deployment (Android App)
+
+- **Platform:** Google Play Console (Production), Firebase App Distribution (Testing)
+- **Build:** Release builds via Gradle (`assembleRelease`), signed with team keystore
+- **Environment Variables:** API URLs, keys stored in `local.properties` and encrypted secrets
+- **CI:** GitHub Actions runs unit/UI tests on push; releases only after passing all tests
+- **Brand Compliance:** All assets, colors, and typography must match MyHaki guidelines
+
+
+**Steps**
+
+ - Feature development occurs on dedicated branches.  
+  - Changes are pushed to GitHub, triggering automated unit and UI tests through GitHub Actions.  
+  - Upon successful tests, the Gradle build process is initiated using `assembleRelease`.  
+  - The generated APK is signed using the team’s keystore.  
+  - Environment variables such as API URLs and keys are securely managed via `local.properties` and encrypted secrets.  
+  - Release APKs are distributed through two channels:  
+  - Firebase App Distribution for testing builds.  
+  - Google Play Console for production release.  
+  - Prior to submission, all assets and UI elements are verified to meet MyHaki’s brand compliance standards.  
+  - The production APK is published officially on Google Play after all validations. 
+---
+
+
+
 
 <style>
 .api-block {

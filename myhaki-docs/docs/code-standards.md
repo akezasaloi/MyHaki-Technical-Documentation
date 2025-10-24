@@ -1,48 +1,7 @@
-# Code Standards
 
 
-## <h2>Frontend (Next.js, TypeScript, Tailwind, PWA)</h2>
 
-- **Components:** Always use functional components for consistency and performance.
-- **Naming:**
-  - camelCase for variables and functions
-  - PascalCase for component names
-  - SCREAMING_SNAKE_CASE for constants
-- **Files:** One component per file. Group by feature/module for maintainability.
-- **Testing:** Use Jest and React Testing Library for unit tests; add tests for each new component or logic.
-- **Styling:** Tailwind CSS only. Avoid inline styles unless absolutely necessary.
-- **Accessibility:** All UI should meet WCAG AA standards. Use semantic HTML and aria attributes.
 
----
-
-## <h2>Mobile (Android, Jetpack Compose, Kotlin)<h2>
-
-- **Architecture:** MVVM, repository pattern, Koin for DI.
-- **Naming:**
-  - camelCase for variables and methods
-  - PascalCase for classes, composables, ViewModels
-  - SCREAMING_SNAKE_CASE for constants
-- **File Structure:** Group by feature, separate data/model/viewmodel/ui.
-- **Testing:** Use JUnit, MockK for unit tests; Compose Test for UI.
-- **Dependency Injection:** Always inject dependencies via Koin modules.
-- **Secure Storage:** Use EncryptedSharedPreferences for sensitive data.
-- **Accessibility:** Use Compose’s accessibility APIs for labels, hints, focus.
-
----
-
-## <h2>Backend (Django, DRF, Python)<h2>
-
-- **Naming:**
-  - snake_case for variables, functions, files
-  - PascalCase for classes and models
-- **Structure:** Place serializers/views in separate files unless tightly coupled.
-- **Testing:** Use Django’s built-in test runner (`python manage.py test`), aim for >90% coverage.
-- **API:** Follow REST conventions, use OpenAPI schema.
-- **Security:** Validate all input, use Django’s CSRF and authentication mechanisms.
-
----
-
-## <span style="font-weight: 600; color: #A87352;">General Standards</span>
 
 - **Linting:**
   - Prettier + ESLint for frontend

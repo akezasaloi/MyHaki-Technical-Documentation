@@ -49,7 +49,6 @@ Explore the core features of **MyHaki**, designed to streamline access to legal 
 - <span style="color: #232f3e;"><b>Equitable Distribution:</b></span>  
   The system prevents lawyer overload and ensures fair case allocation.
 
-![AI Assignment Screenshot](images/case-assignment.png)
 
 ---
 
@@ -79,18 +78,9 @@ Explore the core features of **MyHaki**, designed to streamline access to legal 
 
 ---
 
-## <span style="font-weight: 600; color: #A87352;">6. Brand Identity, Accessibility & Compliance</span>
 
-- <span style="color: #232f3e;"><b>Consistent Branding:</b></span>  
-  All interfaces follow MyHaki’s official color palette, logo, and typography, reflecting values of Justice, Integrity, and Accessibility.
-- <span style="color: #232f3e;"><b>Accessibility:</b></span>  
-  Designed for usability on low-bandwidth devices, screen readers, and across languages.
-- <span style="color: #232f3e;"><b>Legal Compliance:</b></span>  
-  Built to comply with Kenya’s Legal Aid Act and Data Protection Act.
 
-![Brand Guideline Screenshot](images/brand-guideline.png)
 
----
 
 <style>
 .api-block {

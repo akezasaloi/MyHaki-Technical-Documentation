@@ -4,52 +4,22 @@ Welcome to the **MyHaki API Reference**! Here you’ll find everything needed to
 
 ---
 
+
+## <span style="font-weight: 600; color: #A87352;">Database Schema</span>
+
+Designed for maintainability, access control, and performance using PostgreSQL  
+- Core tables: users, lawyers, detainees, cases, assignments, CPD points, vector embeddings (pgvector)
+
+![Database Schema](images/erd.png)
+
+---
+
+
 ## <span style="font-weight: 300; font-size: 1.3em; color: #683929; font-family:'Poppins',sans-serif;">Live API Docs</span>
 
 - **Swagger UI:** [View Swagger Documentation](https://myhaki-3e53581dd62e.herokuapp.com/swagger/)
-- **Postman Online Docs:** 
 
----
 
-## <span style="font-weight: 300; font-size: 1.3em; color: #A87352;">Brand Guidelines Reference</span>
-
-Branding is key for all third-party integrations and admin dashboards. Please use the official assets and styles below:
-
-- **Logo & Marks:**  
-  ![Logo Mark Example 1](images/myhaki-logo.png)  
-
-  ![Logo Mark Example 2](images/icon-logo.png)  
-
-- **Color Palette:**  
-  - Deep Red: `#621616`
-  - Coffee: `#683929`
-  - Light Brown: `#A87352`
-  - Pale Pink: `#E5BFA7`
-  - Sage Green: `#AABDA9`
-  - Mint: `#C7DFC6`
-  - Off White: `#DEF6DD`
-
-- **Typography:**  
-  - **Font:** Poppins  
-  - **Headings:** Poppins Bold  
-  - **Subheadings:** Poppins SemiBold  
-  - **Body:** Poppins Regular
-
-- **Values:** Justice, Integrity, Accessibility
-
-For full brand guidelines, see [Brand Guideline Screenshot](images/brand-guideline.png).
-
----
-
-## <span style="font-weight: 300; font-size: 1.3em; color: #683929;">API Documentation Screenshots</span>
-
-| <span style="font-weight:600">Swagger UI Example</span> | <span style="font-weight:600">Postman API Docs Example</span> |
-|--------------------|-------------------------|
-| ![Swagger Screenshot 1](images/swagger1.png) | ![Postman Screenshot](images/swagger.png) |
-| ![Swagger Screenshot 2](images/swagger2.png) | ![Postman Screenshot](images/doc1.png) |
-| ![Swagger Screenshot 3](images/swagger3.png) | ![Postman Screenshot](images/doc2.png) |
-
----
 
 ## <span style="font-weight: 300; font-size: 1.2em; color: #621616;">Main Endpoints</span>
 
@@ -119,19 +89,7 @@ GET    /users/                    # List all users (admin, RBAC)
 </pre>
 </div>
 
----
 
-## <span style="font-weight: 300; font-size: 1.2em; color: #621616;">Sample UI Screens & API Flows</span>
-
-- **LSK Dashboard Example:**  
-  ![Admin Dashboard](images/lsk-dashboard.png)
-
-- **Mobile App Case Flow:**  
-  ![Mobile App Case List](images/mobile-cases.png)  
-
-  ![Mobile App Case Details](images/mobile-case-details.png)
-
----
 
 ## <span style="font-weight: 300; font-size: 1.2em; color: #621616;">Example API Usage</span>
 
@@ -225,4 +183,43 @@ Authorization: Token {your_token_here}
 - For brand assets and guidelines, contact the design team or see [Brand Guideline Screenshot](images/brand-guideline.png).
 
 ---
+# Deployment Process
+---
 
+## Backend Deployment (Django REST API)
+
+
+- **Naming:**
+  - snake_case for variables, functions, files
+  - PascalCase for classes and models
+- **Structure:** Place serializers/views in separate files unless tightly coupled.
+- **Testing:** Use Django’s built-in test runner (`python manage.py test`), aim for >90% coverage.
+- **API:** Follow REST conventions, use OpenAPI schema.
+- **Security:** Validate all input, use Django’s CSRF and authentication mechanisms.
+- **Platform:** Heroku (Staging & Production)
+- **Branch:** Deploy from `main`
+- **Environment Variables:** Managed securely in Heroku dashboard; never commit secrets
+- **Scaling:** Automatic scaling via Heroku dynos based on demand
+- **Rollback:** Previous stable releases can be redeployed via Heroku dashboard
+
+
+**Steps**
+
+ - Development and code changes happen on feature branches.  
+  - GitHub Actions run automated tests and linting upon each push.  
+  - Merging into the `main` branch triggers a Heroku deployment.  
+  - Heroku pulls the latest code and deploys it to the staging or production environment.  
+  - Environment variables and secrets are securely managed within the Heroku dashboard, never committed to code.  
+  - Heroku Dynos scale automatically based on live traffic demands.  
+  - In the event of deployment issues, rollback to previous stable releases is possible directly from the Heroku dashboard. 
+
+---
+
+## <span style="font-weight:600; color:#A87352;">References & Further Reading</span>
+
+- [TranslatePlus API Docs](https://www.translateplus.com/)
+- [LocationIQ API](https://locationiq.com/docs)
+- [Gemini (Google AI) Docs](https://ai.google.dev/gemini)
+- [Celery & Redis Docs](https://docs.celeryproject.org/en/stable/)
+- [pgvector for PostgreSQL](https://github.com/pgvector/pgvector)
+- [MyHaki API Reference](api-reference.md)

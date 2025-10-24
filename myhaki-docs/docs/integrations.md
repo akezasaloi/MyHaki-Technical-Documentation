@@ -30,7 +30,7 @@ TranslatePlus enables real-time translation of Kiswahili case descriptions to En
            "target": "en"
        }
    )
-   print(response.json())  # {'translation': 'Arrested during demonstration'}
+   print(response.json()) 
    ```
 
 3. **API Endpoint (Backend):**
@@ -116,11 +116,8 @@ Uses Google Gemini (Agentic AI) to classify cases, prioritize urgency, and match
 3. **API Endpoint (Backend):**
    <pre class="api-dark">POST /ai/classify-case/</pre>
 
-4. **Troubleshooting:**
-   - **Quota exceeded:** Monitor API usage.
-   - **Latency:** Show loading indicator in UI.
 
-5. **Best Practices:**
+4. **Best Practices:**
    - Anonymize sensitive data before sending.
    - Log AI decisions for audit and fairness.
 
@@ -150,11 +147,8 @@ Automates assignment of cases to lawyers based on location, availability, and ex
 3. **API Endpoint:**
    <pre class="api-dark">POST /case-assignments/</pre>
 
-4. **Troubleshooting:**
-   - **Task not running:** Check Celery worker logs.
-   - **Redis connection error:** Verify Redis service.
 
-5. **Best Practices:**
+4. **Best Practices:**
    - Monitor assignment queue for overload.
    - Log assignment decisions for transparency.
 

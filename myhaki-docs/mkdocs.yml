@@ -38,19 +38,21 @@ extra_css:
 
 nav:
   - Home: index.md
-  - Getting Started: getting-started.md
-  - Features: features.md
   - How It Works: developer-docs.md
+  - Features: features.md
+  - Frontend Mobile: getting-started.md
+  - Frontend web: web.md
+  - Backend: api-reference.md
+  - Ai: ai.md
   - Integrations: integrations.md
-  - API Reference: api-reference.md
   - Q/A Process: qa-process.md
-  - Deployment Process: deployment-process.md
+  # - Deployment Process: deployment-process.md
   - Code Standards: code-standards.md
   - Brand Guideline: brand-guideline.md
-  - Changelog: changelog.md
-  - FAQ: faq.md
+
+  # - Changelog: changelog.md
   - Compliance & Legal: compliance.md
-  - Database Schema: schema.md
+  # - Database Schema: schema.md
 
 markdown_extensions:
   - pymdownx.tasklist:
