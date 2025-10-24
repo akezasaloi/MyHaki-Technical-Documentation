@@ -35,6 +35,12 @@ Welcome to **MyHaki**! This guide walks you through onboarding, authentication, 
 </pre>
 
 
+
+![Lawyer signup](/images/lawyer-signup.png)
+![Lawyer signin](/images/lawyer-signin.png)
+
+---
+
 ### B. Applicant/Detainee Onboarding (Android App)
 - **Fields:** First Name, Last Name, Email, Password, Role
 
