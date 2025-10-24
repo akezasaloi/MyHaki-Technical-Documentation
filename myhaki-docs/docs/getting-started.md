@@ -47,10 +47,8 @@ class RegisterLawyerView(APIView):
 
 
 
-<div style="text-align: center;">
-  <img src="/images/lawyer-signup.png" alt="Forgot Password" width="200" style="height: auto; display: inline-block; margin-right: 10px;" />
-  <img src="/images/lawyer-signin.png" alt="Verify OTP" width="200" style="height: auto; display: inline-block; margin-left: 10px;" />
-</div>
+![Forgot Password](/images/lawyer-signup.png)
+ ![Verify OTP](/images/lawyer-signin.png)
 
 ---
 
