@@ -83,8 +83,8 @@ class RegisterLawyerView(APIView):
 }
 </pre>
 
-![Forgot Password](images/applicant-signup.png) 
-![Verify OTP](images/applicant-signin.png)
+![Forgot Password](/images/applicant-signup.png) 
+![Verify OTP](/images/applicant-signin.png)
 
 ---
 
@@ -158,8 +158,8 @@ _Response:_
 </pre>
 
 
-![Forgot Password](images/forgot-password.png)
-![Verify OTP](images/verify-code.png)
+![Forgot Password](/images/forgot-password.png)
+![Verify OTP](/images/verify-code.png)
 
 
 
@@ -205,7 +205,7 @@ _Response:_
 
 ## Code Structure
 
-![LSK Sign In](images/app.png)
+![LSK Sign In](/images/app.png)
 
 
 ---

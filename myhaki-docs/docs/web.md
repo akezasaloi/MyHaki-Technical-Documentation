@@ -22,8 +22,8 @@
 }
 </pre>
 
-<!-- ![Forgot Password](images/lsk-signin.png)  -->
-![Brand Guideline Screenshot](images/lsk-signin.png)
+![Forgot Password](/images/lsk-signin.png) 
+<!-- ![Brand Guideline Screenshot](images/lsk-signin.png) -->
 
 ---
 
@@ -97,8 +97,8 @@ _Response:_
 
 ---
 
-![Forgot Password](images/forgot-password.png) 
-![Verify OTP](images/verify-code.png)
+![Forgot Password](/images/forgot-password.png) 
+![Verify OTP](/images/verify-code.png)
 
 
 
@@ -141,7 +141,7 @@ _Response:_
 
 ## Code Structure
 
-![MyHaki Logo](images/code.png)
+![MyHaki Logo](/images/code.png)
 
 
 ---
