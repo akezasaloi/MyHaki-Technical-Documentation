@@ -34,23 +34,6 @@ Welcome to **MyHaki**! This guide walks you through onboarding, authentication, 
 }
 </pre>
 
-**Backend Logic (DRF):**
-```
-class RegisterLawyerView(APIView):
-    def post(self, request):
-        serializer = LawyerProfileSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=201)
-        return Response(serializer.errors, status=400)
-```
-
-
-
-![Lawyer signup](/images/lawyer-signup.png)
-![Lawyer signin](/images/lawyer-signin.png)
-
----
 
 ### B. Applicant/Detainee Onboarding (Android App)
 - **Fields:** First Name, Last Name, Email, Password, Role
