@@ -97,8 +97,8 @@ _Response:_
 
 ---
 
-![Forgot Password](images/forgot-password.png) 
-![Verify OTP](images/verify-code.png)
+![LSK Forgot Password](images/forgot-password.png) 
+![LSK Verify OTP](images/verify-code.png)
 
 
 
@@ -141,7 +141,7 @@ _Response:_
 
 ## Code Structure
 
-![MyHaki Logo](images/code.png)
+![Code structure](images/code.png)
 
 
 ---

@@ -37,8 +37,8 @@ Welcome to **MyHaki**! This guide walks you through onboarding, authentication, 
 
 
 
-![Lawyer signup](/images/lawyer-signup.png)
-![Lawyer signin](/images/lawyer-signin.png)
+![Lawyer signup](images/lawyer-signup.png)
+![Lawyer signin](images/lawyer-signin.png)
 
 ---
 
@@ -71,8 +71,8 @@ Welcome to **MyHaki**! This guide walks you through onboarding, authentication, 
 }
 </pre>
 
-![Forgot Password](/images/applicant-signup.png) 
-![Verify OTP](/images/applicant-signin.png)
+![Forgot Password](images/applicant-signup.png) 
+![Verify OTP](images/applicant-signin.png)
 
 ---
 
@@ -146,8 +146,8 @@ _Response:_
 </pre>
 
 
-![Forgot Password](/images/forgot-password.png)
-![Verify OTP](/images/verify-code.png)
+![Forgot Password](images/forgot-password.png)
+![Verify OTP](images/verify-code.png)
 
 
 
@@ -193,7 +193,7 @@ _Response:_
 
 ## Code Structure
 
-![LSK Sign In](/images/app.png)
+![LSK Sign In](images/app.png)
 
 
 ---
