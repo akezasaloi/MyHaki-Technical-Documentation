@@ -29,7 +29,7 @@ Welcome to **MyHaki**! This guide walks you through onboarding, authentication, 
   "practice_number": "LSK/2025/008989",
   "first_name": "Loice",
   "last_name": "Nekesa",
-  "email": "loice.lawyer@example.com",
+  "email": "loice.lawyer@example.comm",
   "verified": true
 }
 </pre>
