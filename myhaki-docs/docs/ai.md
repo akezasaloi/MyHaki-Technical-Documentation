@@ -4,16 +4,15 @@ MyHaki Agent is an AI-powered legal assistant designed to help users access, und
 
 ---
 
-## AI Models
+# AI Models
 
-### Legal-BERT 
-Specialized BERT model for legal text understanding and embeddings generation (`nlpaueb/legal-bert-base-uncased`).
 
-**How to Use:**
-Install required packages
-pip install transformers torch
+### Legal-BERT  
+Specialized BERT model for legal text understanding and embeddings generation (`nlpaueb/legal-bert-base-uncased`).  
 
-Load and embed text
+**How to Use:**  
+<div class="api-block">
+<pre class="api-dark">
 from transformers import AutoTokenizer, AutoModel
 import torch
 
@@ -25,29 +24,27 @@ inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True, max
 with torch.no_grad():
 outputs = model(**inputs)
 
-embeddings = outputs.last_hidden_state.mean(dim=1).numpy().tolist() # Use for chunk storage in Supabase
+embeddings = outputs.last_hidden_state.mean(dim=1).numpy().tolist() 
 
-text
+</pre>
+</div>
 
 **Apply:** Embed legal chunks (e.g., court judgments) and store in pgvector; query similarity for RAG retrieval.
 
 ---
 
 ### RAG Pipeline  
-Retrieval-Augmented Generation for context-aware case processing (LangChain + Vector Search).
+Retrieval-Augmented Generation for context-aware case processing (LangChain + Vector Search).  
 
-**How to Use:**
-Install required packages
-pip install langchain chromadb sentence-transformers
-
-Setup retrieval
+**How to Use:**  
+<div class="api-block">
+<pre class="api-dark">
 from langchain.vectorstores import Chroma
 from langchain.embeddings import HuggingFaceEmbeddings
 
 embeddings = HuggingFaceEmbeddings(model_name="nlpaueb/legal-bert-base-uncased")
 vectorstore = Chroma.from_documents(docs, embeddings) # Load pre-embedded chunks
 
-Run RAG query
 from langchain.chains import RetrievalQA
 from langchain.llms import GoogleGenerativeAI
 
@@ -56,33 +53,32 @@ qa_chain = RetrievalQA.from_chain_type(llm, retriever=vectorstore.as_retriever(s
 
 result = qa_chain.run("Classify this case: [query text]") # Outputs classification/urgency
 
-text
+</pre>
+</div>
 
 **Apply:** Chain with Gemini for JSON outputs (case_type, urgency); handle multilingual by prompt engineering.
 
 ---
 
 ### Gemini LLM  
-Advanced language model for classification and reasoning (Gemini 2.5 Flash).
+Advanced language model for classification and reasoning (Gemini 2.5 Flash).  
 
-**How to Use:**
-Install required package
-pip install google-generativeai
-
-Setup
+**How to Use:** 
+<div class="api-block">
+<pre class="api-dark"> 
 from google.generativeai import GenerativeModel, configure
 import json
 
-configure(api_key="api_key")
+configure(api_key="your_api_key")
 model = GenerativeModel('gemini-2.5-flash')
 
-Generate response
 prompt = "Analyze query and context for case_type, urgency, reasoning in JSON."
 response = model.generate_content(prompt)
 
 result = json.loads(response.text) # Parse for {"case_type": "civil", "urgency": "high", "reasoning": "..."}
 
-text
+</pre>
+</div>
 
 **Apply:** Use in RAG for structured outputs; override urgency with date rules (e.g., trial <15 days = "urgent").
 
@@ -94,47 +90,61 @@ text
 
 ### Pipeline Stages (Detailed Usage):
 
-- **Collection:** Raw case data intake via API or upload (e.g., CSV/PDF/JSON); use Pandas for initial parsing:
+- **Collection:** Raw case data intake via API or upload (e.g., CSV/PDF/JSON); use Pandas for initial parsing:  
+<div class="api-block">
+<pre class="api-dark">
 import pandas as pd
-df = pd.read_csv("legal_cases.csv") # Load and validate
+df = pd.read_csv("legal_cases.csv")
 
-text
+</pre>
+</div>
 
 - **Cleaning:** Data normalization with regex/BeautifulSoup for text extraction; remove duplicates, handle missing fields.
 
-- **Chunking:** Text segmentation (page/sentence/character-level) using LangChain:
+- **Chunking:** Text segmentation (page/sentence/character-level) using LangChain:  
+<div class="api-block">
+<pre class="api-dark">
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 chunks = splitter.split_text(text)
 
-text
+
+</pre>
+</div>
 
 - **Embedding:** Vector generation with Legal-BERT (as above); batch process for efficiency.
 
-- **Storage:** Insert into Supabase pgvector for similarity searches:
+- **Storage:** Insert into Supabase pgvector for similarity searches:  
+<div class="api-block">
+<pre class="api-dark">
 from supabase import create_client
 
 client = create_client(SUPABASE_URL, SUPABASE_KEY)
-client.table("embeddings").insert({"id": chunk_id, "embedding": embedding}).execute() # Embed chunks for RAG retrieval
+client.table("embeddings").insert({"id": chunk_id, "embedding": embedding}).execute() 
 
-text
+
+</pre>
+</div>
 
 ---
 
-## Query Endpoint Example (FastAPI)
+## API Query Endpoint (FastAPI Example) 
+<div class="api-block">
+<pre class="api-dark"> 
 from fastapi import FastAPI
 
 app = FastAPI()
 
 @app.post("/query")
 def query_case(q: str):
-results = vectorstore.similarity_search(q, k=5) # Retrieve top-k chunks
+results = vectorstore.similarity_search(q, k=5)
 return {
 "chunks": results,
 "metadatas": [r.metadata for r in results]
-} # Return for Gemini processing
-
+}
+</pre>
+</div>
 ---
 # Technologies
 
@@ -143,30 +153,38 @@ return {
 - **LangChain:**  
   Framework for RAG apps; chain retrievers/LLMs.  
   Example: Use `RetrievalQA` to integrate Supabase vectorstore with Gemini.  
-qa_chain.run("Classify case: [query]") # For urgency prediction
-
-text
+  <div class="api-block">
+<pre class="api-dark">
+qa_chain.run("Classify case: [query]") 
+</pre>
+</div>
 
 - **pgvector:**  
 PostgreSQL vector similarity extension; query embeddings efficiently.  
 Example:  
+<div class="api-block">
+<pre class="api-dark">
 SELECT * FROM embeddings ORDER BY embedding <=> query_embedding LIMIT 5;
+</pre>
+</div>
 
-text
 Executed via Supabase RPC for scalable searches on legal chunks.
 
 - **Hugging Face:**  
 Model hub and transformers library.  
 Example: Load Sentence Transformers for quick embedding generation.  
+<div class="api-block">
+<pre class="api-dark">
 from sentence_transformers import SentenceTransformer
 import functools
 
 @functools.lru_cache()
 def get_embedding_model():
 return SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
-
+</pre>
+</div>
 ---
-text
+
 # Deployment Process
 
 ## AI Agent Deployment (FastAPI)
@@ -190,6 +208,8 @@ text
 - **GitHub Actions CI/CD:** Verifies tests and lint, builds Docker image.
 
 **Sample YAML snippet:**
+<div class="api-block">
+<pre class="api-dark">
 name: Deploy FastAPI App
 on:
 push:
@@ -215,33 +235,42 @@ gcloud run deploy myhaki-agent
 --memory 1Gi
 --set-env-vars GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }},SUPABASE_URL=${{ secrets.SUPABASE_URL }}
 
-text
+</pre>
+</div>
 
 - **Explanation:** Automates checkout, authentication, and deployment; pulls Docker image from Docker Hub; sets environment variables securely.
 
 - **Merge Triggers Deployment:**  
+<div class="api-block">
+<pre class="api-dark">
   Build and push to Google Container Registry (GCR):  
 docker tag myhaki-agent gcr.io/project-id/myhaki-agent:tag
 docker push gcr.io/project-id/myhaki-agent:tag
 
-text
-
+</pre>
+</div>
 - **Auto-Deployment:**  
+<div class="api-block">
+<pre class="api-dark">
 gcloud run deploy --image gcr.io/project-id/myhaki-agent:tag --platform managed --allow-unauthenticated --port 8080
+</pre>
+</div>
 
-text
 
 ---
 
 ## Secrets Access at Runtime
 
+<div class="api-block">
+<pre class="api-dark">
 from google.cloud import secretmanager
 
 client = secretmanager.SecretManagerServiceClient()
 response = client.access_secret_version(name="projects/project-id/secrets/gemini-key/versions/latest")
 api_key = response.payload.data.decode("UTF-8")
 
-text
+</pre>
+</div>
 
 - **Explanation:** Fetches secrets at runtime to prevent leaks.
 
@@ -250,12 +279,14 @@ text
 ## Health and Monitoring
 
 - **Dockerfile Health Check:**
+<div class="api-block">
+<pre class="api-dark">
 HEALTHCHECK CMD curl --fail http://localhost:8080/ || exit 1
 
-text
+</pre>
+</div>
 
 - **Explanation:** Periodically probes the FastAPI endpoint for readiness; integrates with Google Cloud Monitoring alerts.
 
 ---
 
-This streamlined deployment process ensures reliable, scalable operation of the AI legal assistant. For full YAML and Dockerfile details, refer to your project repository.
